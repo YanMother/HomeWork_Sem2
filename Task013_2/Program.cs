@@ -31,3 +31,4 @@ int MakeArray(int a, int b)
     }
     return result;
 }
+// Не смог справиться  с задачей :( Терминал выдает ошибки
