@@ -4,30 +4,18 @@
 // 78 -> третьей цифры нет
 // 32679 -> 6
 
-// Функция принимает сообщение для отображения в консоли, и выводит результат введенных данных пользователем.
-int ReadInt(string message)
+Console.Write("Введите трёхзначное число: ");
+int abc = int.Parse(Console.ReadLine()!);
+if (abc <= 100)
 {
-    Console.Write(message);
-    return Convert.ToInt32(Console.ReadLine());
+    Console.WriteLine($" {abc} - нет третьей цифры");
 }
-
-// Функция принимает число введенное пользователем, количество символов, и выводит третью цифру числа. Если 3 цифры нет, сообщает и выводит 0.
-int MakeArray(int a, int b)
+else
 {
-    int result = 0;
-    if (b < 3)
+    while (abc >= 999)
     {
-        Console.Write("Третьей цифры нет! ");
+        abc /= 10;        
     }
-    else
-    {
-        int c = 1;
-        for (int i = b; i > 3; i--)
-        {
-            c = c * 10;
-        }
-
-        result = (a / c) % 10;
-    }
-    return result;
+    int firstDecimalPlace = abc % 10;
+    Console.WriteLine($"Третья цифра заданного числа: {firstDecimalPlace}");
 }
